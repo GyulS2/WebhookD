@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github</title>
+  </head>
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
+
+  <script>
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/854956825211306014/QBFP6ZV9PIEU96TWgqmpatObYudXWQMIKTG5iuz7J7n4z42DVlIGwGU9WPoPI7GBnODD");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "감귤 메세지",
+        avatar_url: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20141026_153%2Fjejudangol_141429676749951AMq_JPEG%2FIMG_6860.JPG&type=sc960_832",
+        content: "보낼 메시지"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
